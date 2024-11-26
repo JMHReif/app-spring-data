@@ -1,7 +1,11 @@
+import org.springframework.data.neo4j.core.schema.GeneratedValue;
+import org.springframework.data.neo4j.core.support.UUIDStringGenerator;
+
 // tag::model[]
 @Node
 class Customer {
     @Id
+    @GeneratedValue(UUIDStringGenerator.class)
     String customerId;
     String customerName;
     Integer loyaltyNumber;
@@ -12,6 +16,7 @@ class Customer {
 @Node
 class Employee {
     @Id
+    @GeneratedValue(UUIDStringGenerator.class)
     String employeeId;
     String employeeName;
     LocalDate startDate;
@@ -23,6 +28,7 @@ class Employee {
 @Node
 class Order {
     @Id
+    @GeneratedValue(UUIDStringGenerator.class)
     String transactionId;
     LocalDate transactionDate;
     LocalTime transactionTime;
